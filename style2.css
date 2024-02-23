@@ -1,0 +1,267 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+} /* Grid*/
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 70px 3fr 3fr 70px;
+    grid-template-areas: 
+    "header header header"
+    "main main main"
+    "main main main"
+    "footer footer footer";
+    }
+
+/* Header con bootstrap */
+header {
+    font-family: 'Open Sans', sans-serif;
+    border-bottom: 1px solid #d3d3d3;
+}
+.container{
+    margin-left: 0px;
+}
+.navbar-brand img {
+    height: 60px;
+}
+
+.letras-anchas {
+    font-weight: bold;
+    color: #c08e47;
+}/* Header común */
+
+header {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Open Sans', sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    background-color: #ffffff;
+}
+
+.contenedor-logo{
+    justify-content: flex-start;
+}
+.contenedor-nav{
+    display: flex;
+}
+nav li{
+    display: inline;
+    margin-right: 20px;
+}
+.a-nav{
+    text-decoration: none;
+    color: black;
+}
+
+.letras-anchas{
+    text-decoration: none;
+    font-weight: bold;
+    color: #c08e47;
+}
+.img {
+    height: 25px;
+    padding-right: 10px;
+}
+
+
+/* Home Main */
+main{
+    grid-area: main;
+    font-family: 'Quicksand', sans-serif;
+    min-height: 88vh;
+}
+.espaciado{
+    margin-bottom: 30px;
+    margin-top: 15px;
+}
+.imgPrincipal{
+    height: 550px;
+    width: 100%;
+}
+.imagenes-pequeñas{
+    height: 280px;
+    width: 400px;
+}
+.secciones{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+}
+.parrafo{
+    text-align: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    font-size: 17px;
+}
+.titulo{
+    font-size: 30px;
+    color:#c08e47;
+    font-family: 'Open Sans', sans-serif;
+}
+.mi-boton {
+    background-color: #d1c1c7;
+    border-radius: 15px; /* Bordes redondos */
+    border: none; /*sin color el border*/
+    padding: 10px 20px; /* Espaciado interno del botón */
+    font-size: 25px; /* Tamaño de la fuente */
+    font-weight: bold; /* Letra ancha o negrita */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+    text-decoration: none;
+    color: #ffffff;
+}
+.mi-boton a:hover {
+    text-decoration: none; /* Quitar el subrayado */
+    color: #ffffff;
+}
+.mi-boton a{
+    text-decoration: none;
+    color: #ffffff;
+}
+.div1{
+    display: flex;
+    justify-content: space-evenly;
+}
+.fondo{
+    background-color:#E4CAB5;
+}
+
+/*cartas del index */
+.div-cartas img:hover{
+    filter: brightness(80%);
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Añade una sombra al pasar el ratón */
+    transition: filter 0.3s ease; /* Agrega una transición suave */
+}
+
+/*Pagina Productos*/
+
+.img-productos{
+    height: 350px;
+    width: 400px;
+}
+/* Pagina contacto*/
+
+.izquierda{
+    text-align: left;
+    margin:40px;
+} 
+.carousel-item img:hover {
+    filter: brightness(105%); /*Brillo al 105% al pasar el ratón*/
+    transform: scale(1.1); /* Escala la imagen al 110% al pasar el ratón */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Añade una sombra al pasar el ratón */
+    transition: filter 0.3s ease; /* Agrega una transición suave */
+}
+/* Pagina Nosotras*/
+
+.img-nosotras{
+    height: auto;
+    width: 40vw;
+    
+}
+/* Footer */
+footer{
+    grid-area: footer;
+    background-color: #BA8B76;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.imgLogo{
+    height: 70px;
+    width: 70px;
+}
+
+
+
+
+/* Medias Query*/
+
+
+
+
+/* Media query para pantalla de celular*/
+@media only screen and (max-width: 576px) {
+    /* HEADER */
+    .navbar-brand img {
+        content: url('/imagenes/logoPequeño1.png'); /* Cambiar la ruta de la imagen para el logo en tamaños de pantalla de celular */
+        height: 60px; /* Ajusta el tamaño del logo para pantallas de celular */
+    }
+
+    /* MAIN */
+    .imgPrincipal{
+        width:100%;
+        height: 320px;
+    }
+    .secciones{
+        display: block;
+    }
+    .img-productos{
+        height: 350px;
+        width: 407px;
+    }
+    .izquierda{
+        margin:15px;
+    } 
+    .mi-boton{
+        font-size: 17px;
+    }
+
+    /*PAGINA NOSOTRAS*/
+    .img-nosotras{
+        width: 100%;
+    }
+    /*PAGINA PRODUCTOS*/
+    #carouselExample{
+        display:  none;
+    }
+    #carouselExampleMobile{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+    /*PAGINA CONTACTO*/
+    .parrafo{
+        padding: 15px;
+    }
+
+    /* FOOTER*/
+
+}
+
+/* Media query para pantalla de tablet */
+@media only screen and (min-width: 577px) and (max-width: 992px) {
+    .navbar-toggler {
+        display: block; /* Mostrar el botón de la hamburguesa en tamaños de pantalla de tablet */
+    } 
+    .parrafo{
+        padding: 0px;
+        margin: 15px;
+    }
+    .imagenes-pequeñas{
+        width: 100%;
+    }
+    #carouselExampleMobile{
+        display: none;
+    }
+}
+
+/* Media Query para pantallas Desktop*/
+@media only screen and (min-width: 981px) {
+    #carouselExampleMobile{
+        display: none;
+    }
+    #espaciado-id{
+        margin-bottom: 30px;
+        margin-top: 15px;
+    }
+}
